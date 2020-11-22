@@ -1,0 +1,28 @@
+import React from "react";
+import Note from "../Note/Note";
+import "./NotePageMain.css";
+
+export default function NotePageMain(props) {
+  console.log(props);
+  return (
+    <section className="NotePageMain">
+      <Note
+        id={props.note.id}
+        name={props.note.title}
+        modified={props.note.date_modified}
+        folder_id={props.note.folder_id}
+      />
+      <div className="NotePageMain__content">
+        {props.note.content.split(/\n \r|\n/).map((para, i) => (
+          <p key={i}>{para}</p>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+NotePageMain.defaultProps = {
+  note: {
+    content: "",
+  },
+};
