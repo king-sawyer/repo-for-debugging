@@ -6,7 +6,6 @@ import { countNotesForFolder } from "../notes-helpers";
 import "./NoteListNav.css";
 
 export default function NoteListNav(props) {
-  // console.log(props);
   return (
     <div className="NoteListNav">
       <ul className="NoteListNav__list">

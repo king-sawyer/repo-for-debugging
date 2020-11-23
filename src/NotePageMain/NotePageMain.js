@@ -3,7 +3,6 @@ import Note from "../Note/Note";
 import "./NotePageMain.css";
 
 export default function NotePageMain(props) {
-  console.log(props);
   return (
     <section className="NotePageMain">
       <Note
@@ -11,6 +10,7 @@ export default function NotePageMain(props) {
         name={props.note.title}
         modified={props.note.date_modified}
         folder_id={props.note.folder_id}
+        deleteNote={props.deleteNote}
       />
       <div className="NotePageMain__content">
         {props.note.content.split(/\n \r|\n/).map((para, i) => (

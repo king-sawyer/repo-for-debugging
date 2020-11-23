@@ -5,13 +5,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Note.css";
 
 export default function Note(props) {
-  // console.log(props);
   return (
     <div className="Note">
       <h2 className="Note__title">
         <Link to={`/note/${props.id}`}>{props.name}</Link>
       </h2>
-      <button className="Note__delete" type="button">
+      <button
+        className="Note__delete"
+        type="button"
+        onClick={(e) => {
+          props.deleteNote(props.id);
+        }}
+      >
         <FontAwesomeIcon icon="trash-alt" /> remove
       </button>
       <div className="Note__dates">
